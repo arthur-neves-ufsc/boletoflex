@@ -12,14 +12,14 @@ User service é um serviço criado especialmente para o teste Desafio Técnico D
 ## Modelo
 
 User
-- name - Nome
-- email - Email
-- photo - Foto
-- phone - Telefone
-- city - Cidade
-- state - Estado
-- district - Bairro
-- street - Rua
+- name - Nome (String)
+- email - Email (String)
+- photo - Foto (byte[])
+- phone - Telefone (String)
+- city - Cidade (String)
+- state - Estado (String)
+- district - Bairro (String)
+- street - Rua (String)
  
 
 ## Bibliotecas
