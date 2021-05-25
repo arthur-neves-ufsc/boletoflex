@@ -1,11 +1,5 @@
 package com.boletoflex.userservice.util;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import java.util.Locale;
 
 public class Utils {
@@ -26,12 +20,4 @@ public class Utils {
             return Locale.getDefault();
         }
     }
-
-	/*
-	 * public static LocalDateTime toLocalDateTime(String str) { return
-	 * LocalDateTime.parse(str, DateTimeFormatter.ISO_DATE_TIME); }
-	 * 
-	 * public static LocalDate toLocalDate(String str) { return LocalDate.parse(str,
-	 * DateTimeFormatter.ISO_DATE); }
-	 */
 }

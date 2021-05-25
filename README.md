@@ -3,6 +3,8 @@
 
 User service é um serviço criado especialmente para o teste Desafio Técnico Desenvolvedor Full Stack da boletoflex.
 
+Disponibilizado aqui no README as informações acerca dos serviços e modelo solicitado. A ideia seria divulgar o Swagger para ter essa documentação viva, porém não tive tempo para finalizar a configuração.
+
 ## Funcionalidades
 
 - Listar todos os usuarios (GET /users)

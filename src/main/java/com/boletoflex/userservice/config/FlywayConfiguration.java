@@ -2,7 +2,6 @@ package com.boletoflex.userservice.config;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Set;
 
 import javax.sql.DataSource;
 
@@ -10,7 +9,6 @@ import org.flywaydb.core.Flyway;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 
 public class FlywayConfiguration {
 	
