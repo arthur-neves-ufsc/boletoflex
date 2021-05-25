@@ -15,6 +15,7 @@ import org.springframework.web.context.request.WebRequest;
 
 import com.boletoflex.userservice.dto.ErrorDTO;
 import com.boletoflex.userservice.exception.BusinessException;
+import com.boletoflex.userservice.exception.NotFoundException;
 import com.boletoflex.userservice.util.Utils;
 
 public abstract class ApiController {
@@ -26,6 +27,20 @@ public abstract class ApiController {
     @ResponseBody
     public ResponseEntity<Object> handleEntityNotFoundException(final Exception ex, final WebRequest request) throws Throwable {
         return handleBusinessException(null, request);
+    }
+    
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseBody
+    public ResponseEntity<Object> handleNotFoundException(final WebRequest request) {
+        final ErrorDTO error = new ErrorDTO();
+        final HttpStatus httpStatus = HttpStatus.NOT_FOUND;
+        error.setTimestamp(new Date());
+        error.setStatus(httpStatus.value());
+        error.setError(httpStatus.getReasonPhrase());
+        error.setMessageKey(ErrorDTO.UNEXPECTED_ERROR);
+        error.setMessage(messageSource.getMessage(error.getMessageKey(), null, ErrorDTO.UNEXPECTED_ERROR, Utils.getLocale(getLanguage())));
+        error.setPath(request.getDescription(false).replace("uri=", ""));
+        return new ResponseEntity<>(error, httpStatus);
     }
 
     @ExceptionHandler(BusinessException.class)

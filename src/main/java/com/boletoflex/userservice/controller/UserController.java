@@ -39,7 +39,7 @@ public class UserController extends ApiController {
 	}
 	
 	@PostMapping("/users")
-	@ApiOperation("List users")
+	@ApiOperation("Save user")
 	public Integer save(@RequestBody UserDTO userDTO) {
 		return userService.save(userDTO);
 	}

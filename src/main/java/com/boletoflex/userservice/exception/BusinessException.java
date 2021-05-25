@@ -10,7 +10,7 @@ public class BusinessException extends RuntimeException {
 
     public static final String USER_WITHOUT_NAME = "user_without_name";
     public static final String USER_WITHOUT_EMAIL = "user_without_email";
-    public static final String USER_WITHOUT_PHONE = "user_without_phone";
+    public static final String USER_WITHOUT_PHOTO = "user_without_photo";
     
     public static final String ERROR_TO_SAVE_USER = "error_to_save_user";
     

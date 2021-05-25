@@ -30,7 +30,13 @@ public class UserService {
 	
 	public Integer save(UserDTO userDTO) {
 		validate(userDTO);
-		return userRepository.save(userDTO.getUser()).getId();
+		
+		
+		try {
+			return userRepository.save(userDTO.getUser()).getId();
+		} catch (Exception e) {
+			throw new BusinessException(BusinessException.ERROR_TO_SAVE_USER, e.getMessage());
+		}
 	}
 
 	private void validate(UserDTO userDTO) {
@@ -44,7 +50,7 @@ public class UserService {
 		}
 		
 		if (ArrayUtils.isEmpty(userDTO.getPhoto())) {
-			throw new BusinessException(BusinessException.USER_WITHOUT_PHONE); 
+			throw new BusinessException(BusinessException.USER_WITHOUT_PHOTO); 
 		}
 	}
 }
