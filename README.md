@@ -5,9 +5,21 @@ User service é um serviço criado especialmente para o teste Desafio Técnico D
 
 ## Funcionalidades
 
-- Listar todos os usuarios
-- Buscar um usuario pelo id
-- Salvar usuario
+- Listar todos os usuarios (GET /users)
+- Buscar um usuario pelo id (GET /users/{userId})
+- Salvar usuario (POST /users)
+
+## Modelo
+
+User
+- name - Nome
+- email - Email
+- photo - Foto
+- phone - Telefone
+- city - Cidade
+- state - Estado
+- district - Bairro
+- street - Rua
  
 
 ## Bibliotecas
